@@ -1,18 +1,18 @@
 stages:
 
   Data_Ingestion:
-    cmd: python Respire\Pipeline\Data_Ingestion.py
+    cmd: python Respire\Pipeline\Training_Pipeline\Data_Ingestion.py
     deps:
-      - Respire\Pipeline\Data_Ingestion.py
+      - Respire\Pipeline\Training_Pipeline\Data_Ingestion.py
       - Respire\Components\Data_Ingestion.py
       - Config\config.yaml
     outs:
       - Artifacts\Data_Ingestion\Chest-CT-Scan-data
     
   Base_Model:
-    cmd: python Respire\Pipeline\Base_Model.py
+    cmd: python Respire\Pipeline\Training_Pipeline\Base_Model.py
     deps:
-      - Respire\Pipeline\Base_Model.py
+      - Respire\Pipeline\Training_Pipeline\Base_Model.py
       - Respire\Components\Base_Model.py
       - Config\config.yaml
     params:
@@ -26,9 +26,9 @@ stages:
 
   
   Model_Training:
-    cmd: python Respire\Pipeline\Model_Trainer.py
+    cmd: python Respire\Pipeline\Training_Pipeline\Model_Trainer.py
     deps:
-      - Respire\Pipeline\Model_Trainer.py
+      - Respire\Pipeline\Training_Pipeline\Model_Trainer.py
       - config\config.yaml
       - Artifacts\Data_Ingestion\Chest-CT-Scan-data
       - Artifacts\Base_Model
@@ -42,9 +42,9 @@ stages:
 
 
   Model_Evaluation:
-    cmd: python Respire\Pipeline\Model_Evaluation.py
+    cmd: python Respire\Pipeline\Training_Pipeline\Model_Evaluation.py
     deps:
-      - Respire\Pipeline\Model_Evaluation.py
+      - Respire\Pipeline\Training_Pipeline\Model_Evaluation.py
       - config\config.yaml
       - Artifacts\Data_Ingestion\Chest-CT-Scan-data
       - Artifacts\Model_Training\Trained_model.h5

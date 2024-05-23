@@ -1,8 +1,8 @@
 from Respire.Logger import logging
-from Respire.Pipeline.Data_Ingestion import DataIngestionTrainingPipeline
-from Respire.Pipeline.Base_Model import PrepareBaseModelTrainingPipeline
-from Respire.Pipeline.Model_Trainer import ModelTrainingPipeline
-from Respire.Pipeline.Model_Evaluation import EvaluationPipeline
+from Respire.Pipeline.Training_Pipeline.Data_Ingestion import DataIngestionTrainingPipeline
+from Respire.Pipeline.Training_Pipeline.Base_Model import PrepareBaseModelTrainingPipeline
+from Respire.Pipeline.Training_Pipeline.Model_Trainer import ModelTrainingPipeline
+from Respire.Pipeline.Training_Pipeline.Model_Evaluation import EvaluationPipeline
 
 
 try:
@@ -30,6 +30,5 @@ try:
     logging.info("<----------------- Model Evaluation completed ----------------->")
 
 except Exception as e:
-    
     logging.exception(e)
     raise e
