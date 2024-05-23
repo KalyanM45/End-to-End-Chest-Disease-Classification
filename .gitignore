@@ -1,8 +1,7 @@
 # Environments
 chestenv
 Notebook_Experiments/Data
-Artifacts/Data_Ingestion
-
+Artifacts
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
