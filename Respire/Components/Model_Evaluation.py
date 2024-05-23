@@ -1,4 +1,5 @@
 import mlflow
+import dagshub
 import mlflow.keras
 import tensorflow as tf
 from pathlib import Path
@@ -54,6 +55,8 @@ class Evaluation:
 
     
     def log_into_mlflow(self):
+        dagshub.init(repo_owner='HemaKalyan45', repo_name='End-to-End-Chest-Disease-Classification', mlflow=True)
+
         mlflow.set_registry_uri(self.config.mlflow_uri)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
         
