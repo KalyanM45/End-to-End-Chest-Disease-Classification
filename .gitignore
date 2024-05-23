@@ -1,7 +1,6 @@
 # Environments
 chestenv
 Notebook_Experiments/Data
-Artifacts
 mlruns
 # Byte-compiled / optimized / DLL files
 __pycache__/

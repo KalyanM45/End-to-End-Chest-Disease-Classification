@@ -1,10 +1,8 @@
 from Respire.Logger import logging
-from Respire.Pipeline.Training_Pipeline import (DataIngestionTrainingPipeline, 
-                                                PrepareBaseModelTrainingPipeline, 
-                                                ModelTrainingPipeline, 
-                                                EvaluationPipeline)
-
-
+from Respire.Pipeline.Data_Ingestion import DataIngestionTrainingPipeline
+from Respire.Pipeline.Base_Model import PrepareBaseModelTrainingPipeline
+from Respire.Pipeline.Model_Trainer import ModelTrainingPipeline
+from Respire.Pipeline.Model_Evaluation import EvaluationPipeline
 
 
 try:

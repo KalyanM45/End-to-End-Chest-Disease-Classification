@@ -17,7 +17,7 @@ class Evaluation:
 
         datagenerator_kwargs = dict(
             rescale = 1./255,
-            validation_split=0.30
+            validation_split=0.20
         )
 
         dataflow_kwargs = dict(
@@ -33,7 +33,7 @@ class Evaluation:
         self.valid_generator = valid_datagenerator.flow_from_directory(
             directory=self.config.Training_Data,
             subset="validation",
-            shuffle=False,
+            shuffle=True,
             **dataflow_kwargs
         )
 
