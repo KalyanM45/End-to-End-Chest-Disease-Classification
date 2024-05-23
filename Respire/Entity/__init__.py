@@ -28,7 +28,7 @@ class PrepareBaseModelConfig:
 class TrainingConfig:
     Root_Dir: Path
     Trained_Model_Path: Path
-    Updated_Base_Model_Path: Path
+    Updated_Model_Path: Path
     Training_Data: Path
     params_epochs: int
     params_batch_size: int

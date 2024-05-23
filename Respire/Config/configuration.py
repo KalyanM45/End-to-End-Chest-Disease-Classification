@@ -48,3 +48,26 @@ class ConfigurationManager:
         )
 
         return prepare_base_model_config
+
+
+    def get_training_config(self) -> TrainingConfig:
+        training = self.config.Model_Training
+        prepare_base_model = self.config.Base_Model
+        params = self.params
+        training_data = os.path.join(self.config.Data_Ingestion.Unzip_Dir, "Chest-CT-Scan-data")
+        create_directories([
+            Path(training.Root_Dir)
+        ])
+
+        training_config = TrainingConfig(
+            Root_Dir = Path(training.Root_Dir),
+            Trained_Model_Path = Path(training.Trained_Model_Path),
+            Updated_Model_Path = Path(prepare_base_model.Updated_Model_Path),
+            Training_Data = Path(training_data),
+            params_epochs=params.EPOCHS,
+            params_batch_size=params.BATCH_SIZE,
+            params_is_augmentation=params.AUGMENTATION,
+            params_image_size=params.IMAGE_SIZE
+        )
+
+        return training_config
