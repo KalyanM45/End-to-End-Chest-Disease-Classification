@@ -1,7 +1,7 @@
 import os
 from Respire.Utils import *
 from Respire.Constants import *
-from Respire.Entity import DataIngestionConfig
+from Respire.Entity import DataIngestionConfig, PrepareBaseModelConfig, TrainingConfig, EvaluationConfig
 
 
 class ConfigurationManager:
@@ -29,3 +29,22 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+
+    def get_prepare_base_model_config(self) -> PrepareBaseModelConfig:
+        config = self.config.Base_Model
+        
+        create_directories([config.Root_Dir])
+
+        prepare_base_model_config = PrepareBaseModelConfig(
+            Root_Dir = Path(config.Root_Dir),
+            Base_Model_Path = Path(config.Base_Model_Path),
+            Updated_Model_Path = Path(config.Updated_Model_Path),
+            params_image_size = self.params.IMAGE_SIZE,
+            params_learning_rate = self.params.LEARNING_RATE,
+            params_include_top = self.params.INCLUDE_TOP,
+            params_weights = self.params.WEIGHTS,
+            params_classes = self.params.CLASSES
+        )
+
+        return prepare_base_model_config

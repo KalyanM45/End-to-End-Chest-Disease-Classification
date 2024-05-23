@@ -1,8 +1,6 @@
 from Respire.Logger import logging
-from Respire.Pipeline.Data_Ingestion import DataIngestionTrainingPipeline
-#from Respire.Pipeline.stage_02_prepare_base_model import PrepareBaseModelTrainingPipeline
-#from Respire.Pipeline.stage_03_model_trainer import ModelTrainingPipeline
-#from Respire.Pipeline.stage_04_model_evaluation import EvaluationPipeline
+from Respire.Pipeline.Training_Pipeline import DataIngestionTrainingPipeline, PrepareBaseModelTrainingPipeline
+
 
 
 
@@ -14,7 +12,7 @@ try:
 
     logging.info("<----------------- Data Ingestion completed ----------------->")
 
-    '''
+    
     logging.info("<----------------- Base Model Preparation Initiated ----------------->")
 
     prepare_base_model = PrepareBaseModelTrainingPipeline()
@@ -22,7 +20,7 @@ try:
 
     logging.info("<----------------- Base Model Preparation completed ----------------->")
 
-
+    '''
     logging.info("<----------------- Model Training Initiated ----------------->")
 
     model_trainer = ModelTrainingPipeline()

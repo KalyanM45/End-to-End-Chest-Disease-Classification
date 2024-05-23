@@ -15,7 +15,7 @@ class DataIngestionConfig:
 class PrepareBaseModelConfig:
     Root_Dir: Path
     Base_Model_Path: Path
-    Updated_Base_Model_Path: Path
+    Updated_Model_Path: Path
     params_image_size: list
     params_learning_rate: float
     params_include_top: bool
