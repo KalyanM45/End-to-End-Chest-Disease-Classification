@@ -1,0 +1,7 @@
+Artifacts_Root: Artifacts
+
+Data_Ingestion:
+  Root_Dir: Artifacts/Data_Ingestion
+  Source_URL: https://drive.google.com/file/d/1qBIDYFx0aLa9MUqBEv0F3oyHIfFopt0j/view?usp=sharing
+  Local_Data_File: Artifacts/Data_Ingestion/Data.zip
+  Unzip_Dir: Artifacts/Data_Ingestion

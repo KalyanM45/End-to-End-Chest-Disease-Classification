@@ -1,6 +1,7 @@
 # Environments
 chestenv
 Notebook_Experiments/Data
+Artifacts/Data_Ingestion
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
