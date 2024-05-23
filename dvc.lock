@@ -1,0 +1,117 @@
+schema: '2.0'
+stages:
+  Data_Ingestion:
+    cmd: python Respire\Pipeline\Data_Ingestion.py
+    deps:
+    - path: Config\config.yaml
+      hash: md5
+      md5: 0b75ac98a8aea3e04f42f671359b236c
+      size: 560
+    - path: Respire\Components\Data_Ingestion.py
+      hash: md5
+      md5: 64c516517af256dc44af001346813546
+      size: 1439
+    - path: Respire\Pipeline\Data_Ingestion.py
+      hash: md5
+      md5: 0380ed98a36cd2e9941f214f5c248017
+      size: 591
+    outs:
+    - path: Artifacts\Data_Ingestion\Chest-CT-Scan-data
+      hash: md5
+      md5: 904fa45d934ce879b3b1933dca6cb2f1.dir
+      size: 49247431
+      nfiles: 343
+  Base_Model:
+    cmd: python Respire/Pipeline/Base_Model.py
+    deps:
+    - path: Config/config.yaml
+      hash: md5
+      md5: 0b75ac98a8aea3e04f42f671359b236c
+      size: 560
+    - path: Respire/Pipeline/Base_Model.py
+      hash: md5
+      md5: eb811c7cbed55a61c4db8f93b831c3c3
+      size: 622
+    params:
+      params.yaml:
+        CLASSES: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+        INCLUDE_TOP: false
+        LEARNING_RATE: 0.01
+        WEIGHTS: imagenet
+    outs:
+    - path: Artifacts/Base_Model
+      hash: md5
+      md5: bc30f61379a1a1ef62f4989b315c189c.dir
+      size: 118054560
+      nfiles: 2
+  Model_Training:
+    cmd: python Respire/Pipeline/Model_Trainer.py
+    deps:
+    - path: Artifacts/Base_Model
+      hash: md5
+      md5: bc30f61379a1a1ef62f4989b315c189c.dir
+      size: 118054560
+      nfiles: 2
+    - path: Artifacts/Data_Ingestion/Chest-CT-Scan-data
+      hash: md5
+      md5: 904fa45d934ce879b3b1933dca6cb2f1.dir
+      size: 49247431
+      nfiles: 343
+    - path: Respire/Pipeline/Model_Trainer.py
+      hash: md5
+      md5: 003a73720aeeebec6d2034ff8374c07b
+      size: 563
+    - path: config/config.yaml
+      hash: md5
+      md5: 0b75ac98a8aea3e04f42f671359b236c
+      size: 560
+    params:
+      params.yaml:
+        AUGMENTATION: true
+        BATCH_SIZE: 16
+        EPOCHS: 2
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: Artifacts/Model_Training/Trained_Model.h5
+      hash: md5
+      md5: 6b2b79135ff1d9a4bb30735e0c807888
+      size: 59337520
+  Model_Evaluation:
+    cmd: python Respire/Pipeline/Model_Evaluation.py
+    deps:
+    - path: Artifacts/Data_Ingestion/Chest-CT-Scan-data
+      hash: md5
+      md5: 904fa45d934ce879b3b1933dca6cb2f1.dir
+      size: 49247431
+      nfiles: 343
+    - path: Artifacts/Model_Training/Trained_model.h5
+      hash: md5
+      md5: 6b2b79135ff1d9a4bb30735e0c807888
+      size: 59337520
+    - path: Respire/Pipeline/Model_Evaluation.py
+      hash: md5
+      md5: addf806b28a72b94a8c8e2d7e471ca9b
+      size: 557
+    - path: config/config.yaml
+      hash: md5
+      md5: 0b75ac98a8aea3e04f42f671359b236c
+      size: 560
+    params:
+      params.yaml:
+        BATCH_SIZE: 16
+        IMAGE_SIZE:
+        - 224
+        - 224
+        - 3
+    outs:
+    - path: scores.json
+      hash: md5
+      md5: 62f2cefffb99b4b5cfc4c33d6d12e776
+      size: 58

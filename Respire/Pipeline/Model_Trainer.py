@@ -12,3 +12,7 @@ class ModelTrainingPipeline:
         training.get_base_model()
         training.train_valid_generator()
         training.train()         
+
+if __name__ == "__main__":
+    pipeline = ModelTrainingPipeline()
+    pipeline.main()

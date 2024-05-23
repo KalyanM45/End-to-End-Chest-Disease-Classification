@@ -12,3 +12,7 @@ class EvaluationPipeline:
         evaluation.evaluation()
         evaluation.save_score()
         evaluation.log_into_mlflow()            
+
+if __name__ == "__main__":
+    pipeline = EvaluationPipeline()
+    pipeline.main()
