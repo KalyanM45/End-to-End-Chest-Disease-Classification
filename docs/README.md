@@ -1,4 +1,4 @@
-* ```config.yaml```: Paths to the Artifacts in each phase
+git add .* ```config.yaml```: Paths to the Artifacts in each phase
 
 * ```params.yaml```: Configuration of Hyperparamters for the Deep Learning Model (VGG-16)
 
