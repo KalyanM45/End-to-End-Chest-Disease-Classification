@@ -6,7 +6,8 @@ Connect with me on social media and explore my work:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/hemakalyan)&nbsp;
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=flat-square&logo=github)](https://github.com/KalyanM45)&nbsp;
 [![Medium](https://img.shields.io/badge/Medium-Follow-03a57a?style=flat-square&logo=medium)](https://medium.com/@kalyan45)&nbsp;
-[![Sponsor Hema Kalyan Murapaka](https://img.shields.io/badge/Sponsor-Hema_Kalyan-28a745?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/KalyanMurapaka45)&nbsp;<img src="https://komarev.com/ghpvc/?username=KalyanM45&label=Profile%20views&color=0e75b6&style=flat" alt="kalyanmurapaka45" />
+![X (formerly Twitter) Follow](https://img.shields.io/twitter/follow/mhemakalyan)
+[![Sponsor Hema Kalyan Murapaka](https://img.shields.io/badge/Sponsor-Hema_Kalyan-28a745?style=flat-square&logo=github-sponsors)](https://github.com/sponsors/KalyanMurapaka45)
 
 **Special Thanks to GitHub Sponsors**
 
