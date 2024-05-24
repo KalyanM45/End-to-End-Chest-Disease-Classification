@@ -19,10 +19,9 @@ Medical imaging has transformed healthcare by providing detailed insights into v
 
  - Tensorflow==2.12.0
  - Pandas
- - gdown
- - dvc
- - mlflow==2.2.2
- - scipy
+ - GDown
+ - DVC
+ - MLFlow==2.2.2
  - Flask
 
 ## Getting Started
